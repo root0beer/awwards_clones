@@ -1,0 +1,121 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background: #e4e0e0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    
+    transform: perspective(5000) rotateX(-25deg) rotateY(25deg); 
+}
+
+.links {
+    margin-left: 1.7rem;
+    padding: 0.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 12;
+}
+
+.textContainer {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.4s;
+    cursor: pointer;
+}
+
+.textContainer p{
+    margin: 0px;
+    font-size: 7vw;
+    font-weight: 700;
+    transition: all 0.4s;
+    line-height: 8vw;
+}
+
+.textContainer .primary {
+    color: white;
+    transition: all 0.4s;
+}
+
+.textContainer .secondary {
+    position: absolute;
+    top: 0;
+    transform: rotateX(-90deg) translateY(4vw);
+    transform-origin: bottom center;
+    opacity: 0;
+}
+
+.textContainer:hover,
+.textContainer:focus {
+    transform: rotateX(90deg);
+}
+
+.textContainer:hover .primary{
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.textContainer:hover .secondary{
+    opacity: 1;
+}
+
+.textandvid {
+    margin-left: 3rem;
+    margin-top: 5rem;
+}
+
+.overlay {
+    background-color: grey;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+}
+
+.textdescr {
+    max-width: 400px;
+    font-size: 1.1rem;
+    color: rgb(132, 129, 129);
+}
+
+.videocontainer {
+    margin-top: 3rem;
+}
+
+.video {
+    width: 300px;
+    mix-blend-mode: darken;
+    opacity: 0.6;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2rem;
+}
+
+.contentF {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.textfooter {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+}
+
+.logoF {}
+
+.archive {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
