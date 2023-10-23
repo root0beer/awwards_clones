@@ -3,28 +3,30 @@ import styles from "./ThreeD.module.scss";
 
 const ThreeD = () => {
     const body = useRef(null);
+    const body2 = useRef(null);
   const manageMouseMove = (e) => {
     const x = e.clientX / window.innerWidth;
     const y = e.clientY / window.innerHeight;
     const rotateX = x * 45 - 45 / 2;
     const rotateY = y * 45 - 45 / 2;
     const perspective = window.innerWidth * 5 + "px";
-    body.current.style.transform = `perspective(${perspective}) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    body.current.style.transform = `perspective(${perspective}) rotateX(${rotateY}deg) rotateY(${rotateX}deg)`;
+    body2.current.style.transform = `perspective(${perspective}) rotateX(${rotateY+10}deg) rotateY(${rotateX+10}deg)`;
     console.log("x :" + x, "y: " + y);
   };
 
   return (
     <div onMouseMove={manageMouseMove} className={styles.container}>
-      <div ref={body} style={{ display: "flex", flexDirection: "row"}}>
+      <div style={{ display: "flex", flexDirection: "row"}}>
         {/* <div className={styles.overlay}></div> */}
-        <div ref={body} className={styles.links}>
+        <div ref={body2} className={styles.links}>
           <Text3D primary={"Mango"} secondary={"Philosophy"} />
           <Text3D primary={"Studio"} secondary={"Team"} />
           <Text3D primary={"Clothing"} secondary={"Beautiful"} />
           <Text3D primary={"Packaging"} secondary={"Sustainable"} />
           <Text3D primary={"Products"} secondary={"Useful"} />
         </div>
-        <div className={styles.textandvid}>
+        <div  ref={body} className={styles.textandvid}>
           <p className={styles.textdescr}>
             Mango takes pride in our commitment to responsible craftsmanship.
             Our team of artisans and designers channel their passion for
