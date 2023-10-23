@@ -1,0 +1,35 @@
+.navbarWrapper {
+    display: flex;
+    justify-content: flex-start;
+    height: 3rem;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid rgb(121, 103, 110);
+}
+
+.backBlock {
+    display: flex;
+    position: absolute;
+}
+
+.arrow {
+    width: 30px;
+    margin-left: 2rem;
+}
+
+.back {
+    margin-left: 1.5rem;
+    text-transform: lowercase;
+    font-weight: 700;
+    color: #7d7887;
+}
+
+.navtitle {
+    font-size: 1.5rem;
+    font-family: Inter, sans-serif;
+    color: #ffffff;
+    margin: 0 auto;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #565063;
+    letter-spacing: 0.037em;
+}
