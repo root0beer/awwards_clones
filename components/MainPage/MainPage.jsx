@@ -14,6 +14,9 @@ const Main = () => {
           <Link className={styles.link} href="/cursortrailing">
             2) Cursor trailing
           </Link>
+          <Link className={styles.link} href="/pixelization">
+            2) Pixelization loading effect
+          </Link>
         </div>
       </div>
     </div>
