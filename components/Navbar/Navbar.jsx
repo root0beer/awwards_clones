@@ -16,7 +16,9 @@ const Navbar = () => {
         />
         <p className={styles.back}>menu</p>
       </Link>
-      <h1 className={styles.navtitle}>Awwards Tutorials</h1>
+      <Link href={"/"} className={styles.navtitle}>
+        <h1 className={styles.navtitle}>Awwards Tutorials</h1>
+      </Link>
     </div>
   );
 };

@@ -6,17 +6,11 @@ const Pixeliz = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        {[...Array(7).keys()].map((_, index) => {
-          return (
-            <div key={index}>
-              {" "}
-              <ImageItem
-                src={`/images/${index}.png`}
-                src10={`/images/${index}_small.png`}
-              />{" "}
-            </div>
-          );
-        })}
+      {
+        [...Array(7).keys()].map( (_, index) => {
+          return <ImageItem src={`/images/${index}.png`} src10={`/images/${index}_small.png`}/>
+        })
+      }
       </main>
     </div>
   );
