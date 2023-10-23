@@ -4,14 +4,29 @@ import { useRef } from "react";
 
 const CursorT = () => {
   const img = useRef();
+  const body = useRef();
 
-  const managMouseMove = () => {
-
+  const managMouseMove = (e) => {
+    const {clientX, clientY} = e;
+    const bodyBound = body.current.getBoundingClientRect();
+    const x = clientX - bodyBound.x;
+    const y = clientY - bodyBound.y;
+    img.current.style.top = y + "px";
+    img.current.style.left = x + "px";
+    draw(x, y);
   };
-  
+
+  const draw = (x, y) => {
+    const div = document.createElement("div");
+    div.classList.add(styles["circle"]);
+    div.style.top = y + "px";
+    div.style.left = x + "px";
+    body.current.append(div);
+  };
+
   return (
     <div className={styles.container}>
-      <div onMouseMove={(e) => {managMouseMove(e)}} className={styles.body}>
+      <div ref={body} onMouseMove={(e) => {managMouseMove(e)}} className={styles.body}>
         <img ref={img} src="smiley.svg"></img>
       </div>
     </div>
