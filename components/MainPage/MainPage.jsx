@@ -11,8 +11,8 @@ const Main = () => {
           <Link className={styles.link} href="/3dperspective">
             1) 3D perspective text animation
           </Link>
-          <Link className={styles.link} href="/3dperspective">
-            2
+          <Link className={styles.link} href="/cursortrailing">
+            2) Cursor trailing
           </Link>
         </div>
       </div>
