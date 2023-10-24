@@ -12,7 +12,11 @@ const PieceText = () => {
   return (
     <div className={styles.body}>
       {phrases.map((phrase, index) => {
-        return <p key={index}>{phrase}</p>;
+        return (
+          <div key={index} className={styles.linemask}>
+            <p>{phrase}</p>
+          </div>
+        );
       })}
     </div>
   );
