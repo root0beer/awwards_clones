@@ -15,10 +15,10 @@ const Main = () => {
             2) Cursor trailing
           </Link>
           <Link className={styles.link} href="/pixelization">
-            2) Pixelization loading effect
+            3) Pixelization loading effect
           </Link>
           <Link className={styles.link} href="/textmask">
-            3) Appearing text from mask
+            4) Appearing text from mask
           </Link>
         </div>
       </div>

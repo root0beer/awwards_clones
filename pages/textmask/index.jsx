@@ -3,7 +3,7 @@ import Wrapper from "@/components/Wrapper/Wrapper";
 import TextMask from "@/components/TextMask/TextMask";
 import React from "react";
 
-const TextMask = () => {
+const TextMaskPage = () => {
   return (
     <Wrapper>
       <Navbar />
@@ -12,4 +12,4 @@ const TextMask = () => {
   );
 };
 
-export default TextMask;
+export default TextMaskPage;
