@@ -17,6 +17,9 @@ const Main = () => {
           <Link className={styles.link} href="/pixelization">
             2) Pixelization loading effect
           </Link>
+          <Link className={styles.link} href="/textmask">
+            3) Appearing text from mask
+          </Link>
         </div>
       </div>
     </div>
