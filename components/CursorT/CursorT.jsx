@@ -32,7 +32,10 @@ const CursorT = () => {
   };
 
   const erase = () => {
-    body.current.removeChild(body.current.childNodes[1]);
+    const childNodes = body.current.childNodes;
+    if (childNodes.length > 1) {
+      body.current.removeChild(childNodes[1]);
+    }
   };
 
   return (
