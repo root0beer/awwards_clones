@@ -8,7 +8,7 @@ const Pixeliz = () => {
       <main className={styles.main}>
       {
         [...Array(7).keys()].map( (_, index) => {
-          return <ImageItem src={`/images/${index}.png`} src10={`/images/${index}_small.png`}/>
+          return <ImageItem key={_} src={`/images/${index}.png`} src10={`/images/${index}_small.png`}/>
         })
       }
       </main>

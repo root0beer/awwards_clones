@@ -20,6 +20,9 @@ const Main = () => {
           <Link className={styles.link} href="/textmask">
             4) Appearing text from mask
           </Link>
+          <Link className={styles.link} href="/texthcolor">
+            5) Text hover effect, colorful
+          </Link>
         </div>
       </div>
     </div>
