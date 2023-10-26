@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+  height: calc(100vh - 3rem);
+}
+
+.main div {
+  width: 100%;
+  border-top: 1px solid black;
+//   padding: 1vw;
+  padding-left: 2vw;
+  margin-bottom: -2vw;
+  background-color: white;
+}
+
+.main div p {
+  font-size: 5vw;
+  margin: 0px;
+  text-transform: uppercase;
+}
