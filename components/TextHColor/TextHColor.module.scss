@@ -20,4 +20,6 @@
   font-size: 5vw;
   margin: 0px;
   text-transform: uppercase;
+  //in order to gsap animation not compete, do this:
+  pointer-events: none;
 }

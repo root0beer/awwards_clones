@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./TextHColor.module.scss";
+import gsap from "gsap";
 
 const PROJECTS = [
   {
@@ -36,12 +37,28 @@ const PROJECTS = [
   },
 ];
 
+const manageMouseEnter = (e, color) => {
+  gsap.to(e.target, {backgroundColor: color, top: "-2vw", duration: 0.3})
+};
+
+const manageMouseLeave = (e, color) => {
+  gsap.to(e.target, {backgroundColor: "white", top: "0vw", duration: 0.3})
+};
+
 const TextHColor = () => {
   return (
     <div className={styles.main}>
       {PROJECTS.map((project, index) => {
         return (
-          <div key={index}>
+          <div
+            onMouseEnter={(e) => {
+              manageMouseEnter(e, project.color);
+            }}
+            onMouseLeave={(e) => {
+              manageMouseLeave(e, project.color);
+            }}
+            key={index}
+          >
             <p>{project.title}</p>
           </div>
         );
