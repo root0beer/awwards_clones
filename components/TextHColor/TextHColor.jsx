@@ -37,15 +37,19 @@ const PROJECTS = [
   },
 ];
 
-const manageMouseEnter = (e, color) => {
-  gsap.to(e.target, {backgroundColor: color, top: "-2vw", duration: 0.3})
-};
-
-const manageMouseLeave = (e, color) => {
-  gsap.to(e.target, {backgroundColor: "white", top: "0vw", duration: 0.3})
-};
-
 const TextHColor = () => {
+  const manageMouseEnter = (e, color) => {
+    gsap.to(e.target, { backgroundColor: color, translateY: "-2vw", duration: 0.3 });
+  };
+
+  const manageMouseLeave = (e, color) => {
+    gsap.to(e.target, {
+      backgroundColor: "white",
+      translateY: "0vw",
+      duration: 0.3,
+      delay: 0.1,
+    });
+  };
   return (
     <div className={styles.main}>
       {PROJECTS.map((project, index) => {
