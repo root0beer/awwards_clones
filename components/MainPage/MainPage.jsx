@@ -23,6 +23,9 @@ const Main = () => {
           <Link className={styles.link} href="/texthcolor">
             5) Text hover effect, colorful
           </Link>
+          <Link className={styles.link} href="/curvedmenu">
+            6) Curved Menu
+          </Link>
         </div>
       </div>
     </div>
