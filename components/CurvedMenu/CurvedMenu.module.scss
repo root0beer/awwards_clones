@@ -82,4 +82,13 @@
       }
     }
   }
+
+  .footer {
+    margin: 3.7rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    opacity: 0.3;
+    font-size: 12px;
+  }
 }
