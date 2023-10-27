@@ -3,6 +3,7 @@ import styles from "./CurvedMenu.module.scss";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { menuSlide, slide } from "./anim";
+import Curve from "./Curve";
 
 const CurvedMenu = () => {
   const navItems = [
@@ -67,6 +68,8 @@ const CurvedMenu = () => {
               <a>Dribble</a>
               <a>LinkedIn</a>
             </div>
+
+            <Curve />
           </motion.div>
         )}
       </AnimatePresence>
