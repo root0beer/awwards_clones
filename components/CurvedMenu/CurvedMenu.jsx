@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./CurvedMenu.module.scss";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { menuSlide } from "./anim";
+import { menuSlide, slide } from "./anim";
 
 const CurvedMenu = () => {
   const navItems = [
@@ -47,7 +47,17 @@ const CurvedMenu = () => {
                   <p>Navigation</p>
                 </div>
                 {navItems.map((item, index) => {
-                  return <Link href={item.href}>{item.title}</Link>;
+                  return (
+                    <motion.div
+                      custom={index}
+                      variants={slide}
+                      animate="enter"
+                      exit="exit"
+                      initial="initial"
+                    >
+                      <Link href={item.href}>{item.title}</Link>
+                    </motion.div>
+                  );
                 })}
               </div>
             </div>
