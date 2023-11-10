@@ -26,6 +26,9 @@ const Main = () => {
           <Link className={styles.link} href="/curvedmenu">
             6) Curved Menu
           </Link>
+          <Link className={styles.link} href="/mousemovegalery">
+            7) Mouse move galery
+          </Link>
         </div>
       </div>
     </div>
