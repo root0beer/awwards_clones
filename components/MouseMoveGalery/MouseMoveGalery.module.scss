@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 3rem);
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+}
+
+.main img {
+  width: 300px;
+  position: absolute;
+  display: none;
+}

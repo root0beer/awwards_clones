@@ -3,7 +3,13 @@ import styles from "./MouseMoveGalery.module.scss";
 
 const MouseMoveGalery = () => {
   return (
-    <div>MouseMoveGalery</div>
+    <main className={styles.main}>
+        {
+            [...Array(19).keys()].map((_, index) => {
+                return <img key={index} src={`/cursorgalery/`}></img>
+            })
+        }
+    </main>
   )
 }
 
