@@ -5,6 +5,8 @@ const MouseMoveGalery = () => {
   let currentIndex = 0;
   let collection = [];
   let step = 0;
+  let maxImages = 3;
+  let mbofImages = 0;
 
   const manageMouseMove = (e) => {
     const { clientX, clientY, movementX, movementY } = e;
@@ -14,7 +16,17 @@ const MouseMoveGalery = () => {
     //if it passes 150 step
     if (step >= 150 * currentIndex) {
       mouseMove(clientX, clientY);
+
+      if (mbofImages == maxImages) {
+        removeImage();
+      };
     }
+  };
+
+  const removeImage = () => {
+    const images = getImages();
+    images[0].style.dispay = "none";
+    mbofImages--;
   };
 
   const mouseMove = (x, y) => {
@@ -23,7 +35,17 @@ const MouseMoveGalery = () => {
     targetImage.style.left = x + "px";
     targetImage.style.top = y + "px";
     currentIndex++;
+    mbofImages++;
   };
+
+  const getImages = () => {
+    let images = [];
+    const indexOfFirstImage = currentIndex - mbofImages;
+    for (let i = indexOfFirstImage; i < currentIndex; i++) {
+        images.push(collection[i].current);
+    };
+    return images;
+};
 
   return (
     <main
