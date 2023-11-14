@@ -4,7 +4,7 @@ import styles from "./SquareCursor.module.scss";
 const SquareCursor = () => {
 
     const getBlocks = () => {
-        const blockSize = window.innerWidth * 0.02;
+        const blockSize = window.innerWidth * 0.05;
         const nbOfBlocks = Math.ceil(window.innerHeight / blockSize);
         return [...Array(nbOfBlocks).keys()].map((_, index) => {
             return <div onMouseEnter={(e) => {colorize(e)}} key={`b_${index}`} className={styles.block}></div>
@@ -24,7 +24,7 @@ const SquareCursor = () => {
         <p>We specialize in turning space into complexe shapes</p>
       </div>
       <div className={styles.grid}>
-        {[...Array(50).keys()].map((_, index) => {
+        {[...Array(20).keys()].map((_, index) => {
           return <div key={index} className={styles.column}>
             {
                 getBlocks()
