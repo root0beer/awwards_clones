@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  height: calc(100vh - 3rem);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 2;
+  position: relative;
+}
+
+.body {
+  width: 70%;
+  text-transform: uppercase;
+  font-size: 8vw;
+  font-weight: 700;
+  text-align: center;
+}
+
+.grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.grid .column {
+    width: 5vw;
+    height: 100%;
+    border: 1px solid red;
+}
