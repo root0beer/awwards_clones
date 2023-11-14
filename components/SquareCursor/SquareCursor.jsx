@@ -7,9 +7,16 @@ const SquareCursor = () => {
         const blockSize = window.innerWidth * 0.02;
         const nbOfBlocks = Math.ceil(window.innerHeight / blockSize);
         return [...Array(nbOfBlocks).keys()].map((_, index) => {
-            return <div key={`b_${index}`} className={styles.block}></div>
+            return <div onMouseEnter={(e) => {colorize(e)}} key={`b_${index}`} className={styles.block}></div>
         })
     };
+
+    const colorize = (e) => {
+        e.target.style.backgroundColor = "black";
+        setTimeout(() => {
+            e.target.style.backgroundColor = "transparent";
+        }, 500);
+    }
 
   return (
     <main className={styles.main}>
