@@ -29,6 +29,9 @@ const Main = () => {
           <Link className={styles.link} href="/mousemovegalery">
             7) Mouse move galery
           </Link>
+          <Link className={styles.link} href="/squarecursor">
+            8) Pixel Cursor Effect
+          </Link>
         </div>
       </div>
     </div>
