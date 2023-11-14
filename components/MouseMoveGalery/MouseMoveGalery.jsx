@@ -3,63 +3,63 @@ import styles from "./MouseMoveGalery.module.scss";
 
 const MouseMoveGalery = () => {
   let currentIndex = 0;
-  let collection = [];
-  let step = 0;
-  let maxImages = 3;
-  let mbofImages = 0;
+  let refs = [];
+  let steps = 0;
+  let maxNumberOfImages = 3;
+  let nbofImages = 0;
 
   const manageMouseMove = (e) => {
     const { clientX, clientY, movementX, movementY } = e;
 
-    step += Math.abs(movementX) + Math.abs(movementY);
+    steps += Math.abs(movementX) + Math.abs(movementY);
 
-    //if it passes 150 step
-    if (step >= 150 * currentIndex) {
+    //if it passes 150 steps
+    if (steps >= currentIndex * 150) {
       mouseMove(clientX, clientY);
 
-      if (mbofImages == maxImages) {
+      if (nbofImages == maxNumberOfImages) {
         removeImage();
       };
     };
 
     //looping the images
-    if (currentIndex == collection.length) {
+    if (currentIndex == refs.length) {
         currentIndex = 0;
-        step = -150;
+        steps = -150;
     };
   };
 
   const removeImage = () => {
     const images = getImages();
     images[0].style.dispay = "none";
-    mbofImages--;
+    nbofImages--;
   };
 
   const mouseMove = (x, y) => {
-    const targetImage = collection[currentIndex].current;
-    targetImage.style.display = "block";
+    const targetImage = refs[currentIndex].current;
     targetImage.style.left = x + "px";
     targetImage.style.top = y + "px";
+    targetImage.style.display = "block";
     currentIndex++;
-    mbofImages++;
+    nbofImages++;
     
     resetZIndex(); 
   };
 
   const resetZIndex = () => {
     const images = getImages();
-    images.forEach((image, index) => {
-      image.style.zIndex = index;
-    });
+    for(let i = 0 ; i < images.length ; i++){
+      images[i].style.zIndex = i;
+    };
   };
 
   const getImages = () => {
     let images = [];
-    const indexOfFirstImage = currentIndex - mbofImages;
+    const indexOfFirstImage = currentIndex - nbofImages;
     for (let i = indexOfFirstImage; i < currentIndex; i++) {
         let targetIndex = i;
-        if (targetIndex <0) targetIndex +=collection.length;
-        images.push(collection[targetIndex].current);
+        if (targetIndex <0) targetIndex +=refs.length;
+        images.push(refs[targetIndex].current);
     };
     return images;
 };
@@ -73,7 +73,7 @@ const MouseMoveGalery = () => {
     >
       {[...Array(19).keys()].map((_, index) => {
         const ref = useRef(null);
-        collection.push(ref);
+        refs.push(ref);
         return (
           <img ref={ref} key={index} src={`/cursorgalery/${index}.jpg`}></img>
         );
