@@ -20,7 +20,13 @@ const MouseMoveGalery = () => {
       if (mbofImages == maxImages) {
         removeImage();
       };
-    }
+    };
+
+    //looping the images
+    if (currentIndex == collection.length) {
+        currentIndex = 0;
+        step = -150;
+    };
   };
 
   const removeImage = () => {
@@ -36,13 +42,24 @@ const MouseMoveGalery = () => {
     targetImage.style.top = y + "px";
     currentIndex++;
     mbofImages++;
+    
+    resetZIndex(); 
+  };
+
+  const resetZIndex = () => {
+    const images = getImages();
+    images.forEach((image, index) => {
+      image.style.zIndex = index;
+    });
   };
 
   const getImages = () => {
     let images = [];
     const indexOfFirstImage = currentIndex - mbofImages;
     for (let i = indexOfFirstImage; i < currentIndex; i++) {
-        images.push(collection[i].current);
+        let targetIndex = i;
+        if (targetIndex <0) targetIndex +=collection.length;
+        images.push(collection[targetIndex].current);
     };
     return images;
 };
