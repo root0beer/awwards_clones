@@ -27,6 +27,14 @@ const MouseMoveGalery = () => {
     }
   }
 
+  const removeImage = () => {
+    const images = getImages();
+    //because i missed "L" in display maxnumber of images didnt work. 
+    //take an L Tan ><
+    images[0].style.display = "none";
+    nbOfImages--;
+  };
+
   const moveImage = (x, y) => {
     const currentImage = refs[currentIndex].current;
     currentImage.style.left = x + "px";
@@ -37,29 +45,23 @@ const MouseMoveGalery = () => {
     setZIndex()
   }
 
-  const setZIndex = () => {
-    const images = getCurrentImages();
+   const setZIndex = () => {
+    const images = getImages();
     for(let i = 0 ; i < images.length ; i++){
       images[i].style.zIndex = i;
     }
   }
 
-  const removeImage = () => {
-    const images = getCurrentImages();
-    images[0].style.display = "none";
-    nbOfImages--;
-  }
-
-  const getCurrentImages = () => {
-    let images = []
-    let indexOfFirst = currentIndex - nbOfImages;
-    for(let i = indexOfFirst ; i < currentIndex ; i++){
-      let targetIndex = i;
-      if(targetIndex < 0) targetIndex += refs.length
-      images.push(refs[targetIndex].current);
-    }
+  const getImages = () => {
+    let images = [];
+    const indexOfFirstImage = currentIndex - nbOfImages;
+    for (let i = indexOfFirstImage; i < currentIndex; i++) {
+        let targetIndex = i;
+        if (targetIndex <0) targetIndex +=refs.length;
+        images.push(refs[targetIndex].current);
+    };
     return images;
-  }
+};
 
   return (
     <main
