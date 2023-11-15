@@ -1,0 +1,21 @@
+.modalContainer {
+    height: 350px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.modalSlider {
+    height: 100%;
+    width: 100%;
+}
+
+.modal {
+    position: relative;
+}
+
+.modal img {
+    height: auto;
+}
