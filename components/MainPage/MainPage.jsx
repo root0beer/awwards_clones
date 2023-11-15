@@ -32,6 +32,9 @@ const Main = () => {
           <Link className={styles.link} href="/squarecursor">
             8) Pixel Cursor Effect
           </Link>
+          <Link className={styles.link} href="/motiongallery">
+            9) Gallery Project
+          </Link>
         </div>
       </div>
     </div>
