@@ -5,15 +5,24 @@
     align-items: center;
     justify-content: center;
     position: absolute;
+    overflow: hidden;
 }
 
 .modalSlider {
     height: 100%;
     width: 100%;
+    //this part we are doing dynamically via javascript
+    // transform: translateY(-300%);
+    position: absolute;
+    transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .modal {
     position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal img {

@@ -3,9 +3,12 @@ import styles from "./Modal.module.scss";
 import Image from 'next/image';
 
 const Modal = ({projects, modal}) => {
+
+    const {active, index} = modal;
+
   return (
     <div className={styles.modalContainer}>
-        <div className={styles.modalSlider}>
+        <div style={{top: index * -100 + "%"}} className={styles.modalSlider}>
             {
                 projects.map((project, index) => {
                     const {src, color} = project;
