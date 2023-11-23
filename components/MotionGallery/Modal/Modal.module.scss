@@ -6,6 +6,8 @@
     justify-content: center;
     position: absolute;
     overflow: hidden;
+    //to avoid hover conflict since project comp has hover effect on mouse enter too:
+    pointer-events: none;
 }
 
 .modalSlider {
