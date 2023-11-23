@@ -19,6 +19,7 @@ const TextGradient = () => {
     gsap.to(refs.current, {
       opacity: 1,
       ease: "none",
+      //for higher perfomance the number should be higher but the gradient wont be so smooth
       stagger: 0.1,
       scrollTrigger: {
         trigger: container.current,
