@@ -1,3 +1,7 @@
+.wrapper {
+    background-color: #121418;
+}
+
 .main {
     display: flex;
     height: calc(100vh - 3rem);
@@ -6,9 +10,9 @@
     overflow: hidden;
     z-index: 2;
     position: relative;
-    margin-bottom: 1000vh;
+    margin-top: 20vh;
+    margin-bottom: 100vh;
     color: rgb(211, 211, 211);
-    background-color: #121418;
   }
 
   .body {
