@@ -35,6 +35,9 @@ const Main = () => {
           <Link className={styles.link} href="/motiongallery">
             9) Gallery Project
           </Link>
+          <Link className={styles.link} href="/textgradient">
+            10) Scroll Text Gradient Opacity
+          </Link>
         </div>
       </div>
     </div>
