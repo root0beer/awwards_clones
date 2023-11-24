@@ -41,6 +41,9 @@ const Main = () => {
           <Link className={styles.link} href="/infinitetext">
             11) Infinite Text Move on Scroll
           </Link>
+          <Link className={styles.link} href="/dispelhover">
+            12) Dispel Hover Effect
+          </Link>
         </div>
       </div>
     </div>
