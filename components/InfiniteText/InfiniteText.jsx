@@ -15,9 +15,15 @@ const InfiniteText = () => {
     }, []);
 
     const animation = () => {
+        if (xPercent <= -100) {
+            xPercent = 0;
+        };
+        if (xPercent > 0) {
+            xPercent = -100;
+        }
         gsap.set(firstText.current, {xPercent: xPercent});
         gsap.set(secondText.current, {xPercent: xPercent});
-        xPercent += 0.1 * direction;
+        xPercent += 0.25 * direction;
         requestAnimationFrame(animation);
     };
 
