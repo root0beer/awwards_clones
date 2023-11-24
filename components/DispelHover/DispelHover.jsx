@@ -19,19 +19,13 @@ const DispelHover = () => {
           <p>Direction</p>
         </div>
         <GetChars>
-          <div className={styles.line}>
             <p>+44759871028</p>
-          </div>
         </GetChars>
         <GetChars>
-          <div className={styles.line}>
             <p>→Email</p>
-          </div>
         </GetChars>
         <GetChars>
-          <div className={styles.line}>
             <p>→Insta</p>
-          </div>
         </GetChars>
       </div>
     </main>
