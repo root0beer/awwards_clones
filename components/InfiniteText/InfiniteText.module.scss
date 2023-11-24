@@ -1,0 +1,37 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 3rem);
+    margin-bottom: 100vh;
+    overflow: hidden;
+    z-index: 2;
+    position: relative;
+}
+
+.main img{
+    object-fit: cover;
+}
+
+.sliderContainer {
+    position: absolute;
+    top: calc(100vh - 300px);
+}
+
+.slider {
+    position: relative;
+    white-space: nowrap;
+    display: flex;
+}
+
+.slider p {
+    margin: 0px;
+    color: white;
+    font-size: 7vw;
+    font-weight: 500;
+}
+
+.slider p:nth-of-type(2) {
+    position: absolute;
+    left: 100%;
+}
