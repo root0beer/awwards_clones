@@ -38,6 +38,9 @@ const Main = () => {
           <Link className={styles.link} href="/textgradient">
             10) Scroll Text Gradient Opacity
           </Link>
+          <Link className={styles.link} href="/infinitetext">
+            11) Infinite Text Move on Scroll
+          </Link>
         </div>
       </div>
     </div>
