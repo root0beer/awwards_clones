@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "./GetChars.module.scss";
+import {motion} from "framer-motion";
+import { disperse } from "../anim";
 
 const GetChars = ({ children }) => {
   const [isActive, setIsActive] = useState(false);
@@ -11,7 +13,8 @@ const GetChars = ({ children }) => {
       .toString()
       .split("")
       .forEach((char, i) => {
-        chars.push(<span key={char + i}>{char}</span>);
+        //dont forget to give an index to custom
+        chars.push(<motion.span custom={i} variants={disperse} animate={isActive ? "open" : "closed"} key={char + i}>{char}</motion.span>);
       });
     return chars;
   };
