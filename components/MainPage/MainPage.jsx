@@ -44,6 +44,9 @@ const Main = () => {
           <Link className={styles.link} href="/dispelhover">
             12) Dispel Hover Effect
           </Link>
+          <Link className={styles.link} href="/smoothscroll">
+            13) Smooth Scroll Landing Page
+          </Link>
         </div>
       </div>
     </div>
