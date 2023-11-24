@@ -3,7 +3,7 @@ import styles from "./GetChars.module.scss";
 import {motion} from "framer-motion";
 import { disperse } from "../anim";
 
-const GetChars = ({ children }) => {
+const GetChars = ({ children, setBackground }) => {
   const [isActive, setIsActive] = useState(false);
 
   const getChars = (element) => {
@@ -21,10 +21,12 @@ const GetChars = ({ children }) => {
 
   const manageMouseEnter = () => {
     setIsActive(true);
+    setBackground(true);
   };
 
   const manageMouseLeave = () => {
     setIsActive(false);
+    setBackground(false);
   };
 
   return (
