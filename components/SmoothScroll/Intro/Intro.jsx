@@ -7,7 +7,7 @@ const Intro = () => {
     <div className={styles.intro}>
       <div className={styles.backgroundImage}>
         <Image
-          src={"/smoothscroll/background.jpg"}
+          src={"/smoothscroll/background.jpeg"}
           fill={true}
           alt="background image"
         />

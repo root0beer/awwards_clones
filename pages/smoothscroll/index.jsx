@@ -6,7 +6,6 @@ import React from "react";
 const SmoothScrollPage = () => {
   return (
     <Wrapper>
-      <Navbar />
       <SmoothScroll />
     </Wrapper>
   );
