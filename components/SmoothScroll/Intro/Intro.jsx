@@ -13,14 +13,14 @@ const Intro = () => {
         />
       </div>
       <div className={styles.introContainer}>
-        <div className={styles.introImage}>
+        <div data-scroll data-scroll-speed="0.3" className={styles.introImage}>
           <Image
             src={"/smoothscroll/intro.png"}
             fill={true}
             alt="background image2"
           />
         </div>
-        <h1>Smooth Scroll</h1>
+        <h1 data-scroll data-scroll-speed="0.7" >Smooth Scroll</h1>
       </div>
     </div>
   );
