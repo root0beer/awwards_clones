@@ -13,8 +13,9 @@ const SmoothScroll = () => {
 
   return (
     <div className={styles.main}>
-      <Navbar />
-      <Intro />
+      <div>
+        <Intro />
+      </div>
       <div></div>
       <div></div>
     </div>
