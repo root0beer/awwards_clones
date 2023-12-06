@@ -44,8 +44,11 @@ const Main = () => {
           <Link className={styles.link} href="/dispelhover">
             12) Dispel Hover Effect
           </Link>
-          <Link className={styles.link} href="/smoothscroll">
+          {/* <Link className={styles.link} href="/smoothscroll">
             13) Smooth Scroll Landing Page
+          </Link> */}
+          <Link className={styles.link} href="/">
+            13) 
           </Link>
         </div>
       </div>
