@@ -47,8 +47,8 @@ const Main = () => {
           {/* <Link className={styles.link} href="/smoothscroll">
             13) Smooth Scroll Landing Page
           </Link> */}
-          <Link className={styles.link} href="/">
-            13) 
+          <Link className={styles.link} href="/navmenu">
+            13) Navigation Menu
           </Link>
         </div>
       </div>
