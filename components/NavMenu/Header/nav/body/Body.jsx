@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Body.module.scss";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { translate } from "../../anim";
 
 const Body = () => {
   const links = [
@@ -30,13 +32,31 @@ const Body = () => {
       src: "contact.png",
     },
   ];
+
+  const getChar = (title) => {
+    let chars = [];
+    title.split("").forEach((char, index) => {
+      chars.push(
+        <motion.span
+          variants={translate}
+          initial="initial"
+          animate="enter"
+          exit="exit"
+          key={`c_${index}`}
+        >
+          {char}
+        </motion.span>
+      );
+    });
+    return chars;
+  };
   return (
     <div className={styles.body}>
       {links.map((link, index) => {
         const { title, href } = link;
         return (
           <Link href={href} key={`l_${index}`}>
-            <p>{title}</p>
+            <p>{getChar(title)}</p>
           </Link>
         );
       })}

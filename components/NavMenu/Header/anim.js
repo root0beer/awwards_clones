@@ -27,3 +27,17 @@ export const height = {
         transition,
     },
 };
+
+export const translate = {
+    initial: {
+       y: "100%",
+    },
+    open: {
+        y: 0,
+        transition: {...transition, delay: 0.2}
+    },
+    closed: {
+        y: "100%",
+        transition: {...transition, delay: 0.2}
+    },
+};
