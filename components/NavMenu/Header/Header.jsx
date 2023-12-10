@@ -1,22 +1,26 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./Header.module.scss";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { opacity } from "./anim";
 
 const Header = () => {
+
+  const [isActive, setIsActive] = useState(false);
   return (
     <div className={styles.header}>
       <div className={styles.bar}>
-        <Link href="/"></Link>
+        <Link href="/">Tatiana Halka</Link>
 
-        <div className={styles.el}>
+        <div onMouseDown={() => {setIsActive(!isActive)}} className={styles.el}>
           <div className={styles.burger}></div>
           <div className={styles.label}>
-            <p>Menu</p>
-            <p>Close</p>
+            <motion.p variants={opacity} animate={isActive ? "closed" : "open"}>Menu</motion.p>
+            <motion.p variants={opacity} animate={!isActive ? "closed" : "open"}>Close</motion.p>
           </div>
         </div>
 
-        <div className={styles.shopContainer}>
+        <motion.div className={styles.shopContainer} variants={opacity} animate={isActive ? "closed" : "open"}>
           <p className={styles.shop}>Shop</p>
           <div className={styles.el}>
             <svg
@@ -37,7 +41,7 @@ const Header = () => {
 
             <p>Cart(0)</p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
