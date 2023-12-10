@@ -1,26 +1,42 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "./Header.module.scss";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { opacity } from "./anim";
+import Nav from "./nav/Nav";
 
 const Header = () => {
-
   const [isActive, setIsActive] = useState(false);
   return (
     <div className={styles.header}>
       <div className={styles.bar}>
         <Link href="/">Tatiana Halka</Link>
 
-        <div onMouseDown={() => {setIsActive(!isActive)}} className={styles.el}>
+        <div
+          onMouseDown={() => {
+            setIsActive(!isActive);
+          }}
+          className={styles.el}
+        >
           <div className={styles.burger}></div>
           <div className={styles.label}>
-            <motion.p variants={opacity} animate={isActive ? "closed" : "open"}>Menu</motion.p>
-            <motion.p variants={opacity} animate={!isActive ? "closed" : "open"}>Close</motion.p>
+            <motion.p variants={opacity} animate={isActive ? "closed" : "open"}>
+              Menu
+            </motion.p>
+            <motion.p
+              variants={opacity}
+              animate={!isActive ? "closed" : "open"}
+            >
+              Close
+            </motion.p>
           </div>
         </div>
 
-        <motion.div className={styles.shopContainer} variants={opacity} animate={isActive ? "closed" : "open"}>
+        <motion.div
+          className={styles.shopContainer}
+          variants={opacity}
+          animate={isActive ? "closed" : "open"}
+        >
           <p className={styles.shop}>Shop</p>
           <div className={styles.el}>
             <svg
@@ -43,6 +59,7 @@ const Header = () => {
           </div>
         </motion.div>
       </div>
+      <AnimatePresence mode="wait">{isActive && <Nav />}</AnimatePresence>
     </div>
   );
 };
