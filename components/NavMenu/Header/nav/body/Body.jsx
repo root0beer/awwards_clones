@@ -29,7 +29,7 @@ const Body = ({ links, selectedLink, setSelectedLink }) => {
         const { title, href } = link;
         return (
           <Link
-            href={href}
+            href={`/navmenu/${href}`}
             key={`l_${index}`}
             onMouseOver={() => {
               setSelectedLink({ isActive: true, index });

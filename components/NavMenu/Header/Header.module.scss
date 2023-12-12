@@ -1,9 +1,22 @@
+
+
 .header {
   padding: 15px;
   position: fixed;
   width: 100%;
   box-sizing: border-box;
   background-color: #f4f0ea;
+
+  
+  .background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: black;
+    opacity: 0.5;
+    top: 100%;
+    left: 0;
+  }
   .bar {
     display: flex;
     align-items: center;
@@ -75,11 +88,12 @@
       }
     }
   }
+
 }
 
 @media only screen and (min-width: 600px) {
   .header {
-    padding: 20px !important;
+    padding: 20px;
 
     .bar {
       font-size: 15px;

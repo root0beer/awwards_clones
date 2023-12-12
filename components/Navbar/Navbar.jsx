@@ -9,7 +9,8 @@ const Navbar = () => {
       <Link href={"/"} className={styles.backBlock}>
         <Image
           className={styles.arrow}
-          src={"arrowback.svg"}
+          // dont forget to put the slash before the image path because on other pages it might not register the asset
+          src={"/arrowback.svg"}
           alt={"arrowback"}
           width={100}
           height={50}
