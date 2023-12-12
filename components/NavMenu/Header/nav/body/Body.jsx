@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Body.module.scss";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { translate, blur } from "../../anim";
 
 const Body = ({ links, selectedLink, setSelectedLink }) => {
@@ -25,23 +25,35 @@ const Body = ({ links, selectedLink, setSelectedLink }) => {
   };
   return (
     <div className={styles.body}>
-      {links.map((link, index) => {
-        const { title, href } = link;
-        return (
-          <Link
-            href={`/navmenu/${href}`}
-            key={`l_${index}`}
-            onMouseOver={() => {
-              setSelectedLink({ isActive: true, index });
-            }}
-            onMouseLeave={() => {
-              setSelectedLink({ isActive: false, index });
-            }}
-          >
-            <motion.p variants={blur} initial="initial" animate={selectedLink.isActive && selectedLink.index != index ? "open" : "closed"}>{getChar(title)}</motion.p>
-          </Link>
-        );
-      })}
+      <AnimatePresence>
+        {links.map((link, index) => {
+          const { title, href } = link;
+          return (
+            <Link
+              href={`/navmenu/${href}`}
+              key={`l_${index}`}
+              onMouseOver={() => {
+                setSelectedLink({ isActive: true, index });
+              }}
+              onMouseLeave={() => {
+                setSelectedLink({ isActive: false, index });
+              }}
+            >
+              <motion.p
+                variants={blur}
+                initial="initial"
+                animate={
+                  selectedLink.isActive && selectedLink.index != index
+                    ? "open"
+                    : "closed"
+                }
+              >
+                {getChar(title)}
+              </motion.p>
+            </Link>
+          );
+        })}
+      </AnimatePresence>
     </div>
   );
 };
