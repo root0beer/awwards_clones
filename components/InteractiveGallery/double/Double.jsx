@@ -2,33 +2,35 @@ import React, { useRef } from "react";
 import styles from "./Double.module.scss";
 import Image from "next/image";
 
-const Double = ({ projects }) => {
+const Double = ({ projects, reversed }) => {
   const firstImage = useRef(null);
   const secondImage = useRef(null);
-  let xPercent = 0;
+  let xPercent = reversed ? 100 : 0;
   let requestAnimationFrameid = null;
-  let currentXPercent = 0;
+  let currentXPercent = reversed ? 100 : 0;
   let speed = 0.15;
   const manageMouseMove = (e) => {
     const { clientX } = e;
     xPercent = (clientX / window.innerWidth) * 100;
 
     if (!requestAnimationFrameid) {
-      requestAnimationFrameid = requestAnimationFrame(animate);
+      requestAnimationFrameid = window.requestAnimationFrame(animate);
     }
   };
 
   const animate = () => {
     const deltaXPercent = xPercent - currentXPercent;
     currentXPercent = currentXPercent + deltaXPercent * speed;
-    firstImage.current.style.width = 66.66 - xPercent * 0.33 + "%";
-    secondImage.current.style.width = 33.33 + xPercent * 0.33 + "%";
+    const firstImagePercent = 66.66 - currentXPercent * 0.33;
+    const secondImagePercent = 33.33 + currentXPercent * 0.33;
+    firstImage.current.style.width = `${firstImagePercent}%`;
+    secondImage.current.style.width = `${secondImagePercent}%`;
 
     if (Math.round(currentXPercent) == Math.round(xPercent)) {
-      cancelAnimationFrame(requestAnimationFrameid);
+      window.cancelAnimationFrame(requestAnimationFrameid);
       requestAnimationFrameid = null;
     } else {
-      requestAnimationFrame(animate);
+      window.requestAnimationFrame(animate);
     }
   };
 
