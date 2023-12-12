@@ -50,6 +50,9 @@ const Main = () => {
           <Link className={styles.link} href="/navmenu">
             13) Navigation Menu
           </Link>
+          <Link className={styles.link} href="/interactivegallery">
+            14) Interactive Gallery
+          </Link>
         </div>
       </div>
     </div>
