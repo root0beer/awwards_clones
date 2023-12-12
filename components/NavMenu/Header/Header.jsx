@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { opacity, background } from "./anim";
 import Nav from "./nav/Nav";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+
   const [isActive, setIsActive] = useState(false);
+  const pathname = usePathname();
+  
+  useEffect(() => {
+    setIsActive(false);
+  }, [pathname]);
+
   return (
     <>
       <div className={styles.header}>
