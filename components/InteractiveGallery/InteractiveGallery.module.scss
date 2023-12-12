@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    height: calc(100vh - 3rem);
+    z-index: 2;
+    position: relative;
+    background-color: rgb(17, 16, 19);
+}
+
+.main {
+    color: white;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    h1 {
+        font-size: 5vw;
+        font-weight: 500;
+    }
+}
