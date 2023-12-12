@@ -3,7 +3,7 @@ import styles from "./Nav.module.scss";
 import { motion } from "framer-motion";
 import { height } from "../anim";
 import Body from "./body/Body";
-import Image from "next/image";
+import ImageComp from "./image/ImageComp";
 
 const Nav = () => {
 
@@ -50,7 +50,7 @@ const Nav = () => {
           <Body links={links} selectedLink={selectedLink} setSelectedLink={setSelectedLink}/>
           {/* <Footer/> */}
         </div>
-        {/* {<Image />} */}
+        <ImageComp src={links[selectedLink.index].src} isActive={selectedLink.isActive}/>
       </div>
     </motion.div>
   );
