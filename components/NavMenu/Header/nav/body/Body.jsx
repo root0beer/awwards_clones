@@ -38,6 +38,7 @@ const Body = () => {
     title.split("").forEach((char, index) => {
       chars.push(
         <motion.span
+          custom={[index * 0.02, (title.length - index)*0.01]}
           variants={translate}
           initial="initial"
           animate="enter"

@@ -32,12 +32,13 @@ export const translate = {
     initial: {
        y: "100%",
     },
-    open: {
+    enter: (i) => ({
         y: 0,
-        transition: {...transition, delay: 0.2}
-    },
-    closed: {
+        opacity: 1,
+        transition: {...transition, delay: i[0]}
+    }),
+    exit: (i) => ({
         y: "100%",
-        transition: {...transition, delay: 0.2}
-    },
+        transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: i[1]}
+    }),
 };
