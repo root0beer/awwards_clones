@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Wrapper from "@/components/Wrapper/Wrapper";
 import React from "react";
 
-const MouseMoveGalPage = () => {
+const InteractiveGalleryPage = () => {
   return (
     <Wrapper>
       <Navbar />
@@ -12,4 +12,4 @@ const MouseMoveGalPage = () => {
   );
 };
 
-export default MouseMoveGalPage;
+export default InteractiveGalleryPage;

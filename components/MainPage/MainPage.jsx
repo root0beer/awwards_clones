@@ -53,6 +53,9 @@ const Main = () => {
           <Link className={styles.link} href="/interactivegallery">
             14) Interactive Gallery
           </Link>
+          <Link className={styles.link} href="/floatingimages">
+            15) Floating Images Gallery
+          </Link>
         </div>
       </div>
     </div>
