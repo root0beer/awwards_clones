@@ -56,6 +56,9 @@ const Main = () => {
           <Link className={styles.link} href="/floatingimages">
             15) Floating Images Gallery
           </Link>
+          <Link className={styles.link} href="/portland">
+            15) Portfolio Landing Page
+          </Link>
         </div>
       </div>
     </div>
