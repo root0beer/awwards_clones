@@ -29,7 +29,7 @@ const FloatingImages = () => {
     yForce = movementY * speed;
 
     if (!requestAnimationFrameId) {
-      requestAnimationFrameId = requestAnimationFrame(animate);
+      requestAnimationFrameId = window.requestAnimationFrame(animate);
     }
   };
 
@@ -47,7 +47,16 @@ const FloatingImages = () => {
       x: `+=${xForce * 0.25}`,
       y: `+=${yForce * 0.25}`,
     });
-    window.requestAnimationFrame(animate);
+    //the end value in the linear interp function is never 0 so it never ends thats why:
+    if (Math.abs(xForce) < 0.01) xForce = 0;
+    if (Math.abs(yForce) < 0.01) yForce = 0;
+    //then we run animate only when
+    if (xForce > 0 || yForce > 0) {
+      window.requestAnimationFrame(animate);
+    } else {
+      window.cancelAnimationFrame(requestAnimationFrameId);
+      requestAnimationFrameId = null;
+    };
   };
 
   return (
