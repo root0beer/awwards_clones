@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./Nav.module.scss";
-import Curve from "@/components/CurvedMenu/Curve";
+import NavSupp from "./NavSupp";
 
 const Nav = () => {
   return (
-    <>
-    </>
+    <div>
+      <NavSupp />
+    </div>
   );
 };
 
