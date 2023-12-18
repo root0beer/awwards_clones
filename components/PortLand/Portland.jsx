@@ -17,6 +17,7 @@ const Portland = () => {
       <Header />
       <Landing />
       <MotionGallery />
+      <MotionGallery />
     </main>
   );
 };

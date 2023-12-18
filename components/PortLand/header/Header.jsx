@@ -17,7 +17,7 @@ const Header = () => {
         start: 0,
         end: window.innerHeight,
         onLeave: () => {gsap.to(burger.current, {scale: 1, duration: 0.25, ease: "power1.out"})},
-        onEnterBack: () => {gsap.to(burger.current, {scale: 1, duration: 0.25, ease: "power1.out"})},
+        onEnterBack: () => {gsap.to(burger.current, {scale: 0, duration: 0.25, ease: "power1.out"})},
       }
     })
   }, []);
