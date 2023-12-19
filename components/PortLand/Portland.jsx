@@ -3,6 +3,7 @@ import styles from "./Portland.module.scss";
 import Landing from "./landing/Landing";
 import MotionGallery from "../MotionGallery/MotionGallery";
 import Header from "./header/Header";
+import Description from "./description/Description";
 
 const Portland = () => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const Portland = () => {
     <main className={styles.main}>
       <Header />
       <Landing />
-      <MotionGallery />
+      <Description />
       <MotionGallery />
     </main>
   );
