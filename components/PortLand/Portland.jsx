@@ -4,6 +4,7 @@ import Landing from "./landing/Landing";
 import MotionGallery from "../MotionGallery/MotionGallery";
 import Header from "./header/Header";
 import Description from "./description/Description";
+import SlidingImages from "./slidingimages/SlidingImages";
 
 const Portland = () => {
   useEffect(() => {
@@ -18,7 +19,8 @@ const Portland = () => {
       <Header />
       <Landing />
       <Description />
-      <MotionGallery />
+      <SlidingImages />
+      {/* <MotionGallery /> */}
     </main>
   );
 };
