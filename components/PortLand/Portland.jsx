@@ -5,6 +5,7 @@ import MotionGallery from "../MotionGallery/MotionGallery";
 import Header from "./header/Header";
 import Description from "./description/Description";
 import SlidingImages from "./slidingimages/SlidingImages";
+import Footer from "../NavMenu/Header/nav/footer/Footer";
 
 const Portland = () => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const Portland = () => {
       <Description />
       <SlidingImages />
       {/* <MotionGallery /> */}
+      <Footer />
     </main>
   );
 };
