@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import styles from "./CurvedMenu.module.scss";
 import Link from "next/link";

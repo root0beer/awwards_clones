@@ -22,7 +22,7 @@ const CursorT = () => {
     div.style.top = y + "px";
     div.style.left = x + "px";
     body.current.append(div);
-    if (body.current.childNodes.length > 25) {
+    if (body?.current?.childNodes?.length > 25) {
       erase();
     } else {
       setTimeout(() => {
@@ -32,8 +32,8 @@ const CursorT = () => {
   };
 
   const erase = () => {
-    const childNodes = body.current.childNodes;
-    if (childNodes.length > 1) {
+    const childNodes = body?.current?.childNodes;
+    if (childNodes?.length > 1) {
       body.current.removeChild(childNodes[1]);
     }
   };

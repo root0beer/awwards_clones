@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from "react";
 import styles from "./Modal.module.scss";
 import Image from "next/image";

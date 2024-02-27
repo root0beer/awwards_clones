@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import styles from "./MotionGallery.module.scss";
 import Project from "./Project/Project";

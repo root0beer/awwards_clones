@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useLayoutEffect, useRef } from "react";
 import styles from "./Header.module.scss";
 import { AnimatePresence } from "framer-motion";
